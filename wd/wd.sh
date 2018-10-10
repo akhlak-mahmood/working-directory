@@ -1,7 +1,7 @@
 #echo 'TODO'
 #echo ' - remove aliases when slots are set to .'
 #echo ' - only have wd* (retr) aliases for filled slots'
-#echo ' - consider replacing wdretr with just cd $WD${i} ??'
+#echo ' - consider replacing wdretr with just cd $wd${i} ??'
 #echo " - add prompt for wdc when WDC_ASK is set"
 #echo " - allow schemes with spaces in the name"
 #echo " - make wdschemecompletion not depend on sed"
@@ -66,9 +66,9 @@ _wd_load_wdenv()
   
   for i in 0 1 2 3 4 5 6 7 8 9 ; do
     if [[ "${slots[$i]}" != "." ]] ; then
-      export WD${i}="${slots[$i]}"
+      export wd${i}="${slots[$i]}"
     else
-      unset WD${i}
+      unset wd${i}
     fi
   done
 }
@@ -167,7 +167,7 @@ wdstore()
 # Update the alias for the new slot
   alias wd${slot}="wdretr $slot"
 # Store the new slot contents into the env.
-  export WD${slot}="$dir"
+  export wd${slot}="$dir"
 }
 
 wdretr()
