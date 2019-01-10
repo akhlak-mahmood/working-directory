@@ -204,6 +204,7 @@ wdl()
     else
       echo "${j}"
     fi
+    echo
   done
 }
 
