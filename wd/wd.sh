@@ -205,7 +205,7 @@ wdl()
       export wd${i}="${slots[$i]}"
       printf "  ${j}  "
       echo "${slots[$j]}" | awk -F'/' '{print $(NF-1)FS$NF}'
-      # echo "${j} ${slots[$j]}"
+      echo "     ${slots[$j]}"
     else
       unset wd${i}
       echo "  ${j}  "
