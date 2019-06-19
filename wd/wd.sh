@@ -202,10 +202,12 @@ wdl()
 
   for j in 0 1 2 3 4 5 6 7 8 9 ; do
     if [[ "${slots[$j]}" != "." ]] ; then
+      export wd${i}="${slots[$i]}"
       printf "  ${j}  "
       echo "${slots[$j]}" | awk -F'/' '{print $(NF-1)FS$NF}'
       # echo "${j} ${slots[$j]}"
     else
+      unset wd${i}
       echo "  ${j}  "
     fi
     echo
